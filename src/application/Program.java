@@ -23,7 +23,7 @@ public class Program {
 			
 			while (rs.next()) { // retorna falso se não houver dados na linha
 				System.out.println(rs.getInt("ID") + ", " + rs.getString("Name"));
-			}
+			} //rs.type(columm name)
 				
 			}
 		catch (SQLException e) {
