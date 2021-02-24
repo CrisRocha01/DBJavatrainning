@@ -22,7 +22,7 @@ public class Program2 {
 			rs = st.executeQuery("SELECT * FROM department");
 		
 		while(rs.next()) {
-			System.out.println(rs.getInt("ID") + ", " + rs.getString("Name"));
+			System.out.println(rs.getInt("ID") + ", "  + rs.getString("Name"));
 		}
 		
 		}

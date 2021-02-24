@@ -10,7 +10,9 @@ import java.sql.Statement;
 import java.util.Properties;
 
 public class DB {
-	private static Connection conn = null; //instancia uma variável para conexão
+	
+	// metodo que usa os dados da conexão do BD e conecta
+	private static Connection conn = null; //instancia uma variável para conexão do jdbc
 	public static Connection getConnection() { //método para conectar
 		if(conn == null) {
 			try {
@@ -27,7 +29,7 @@ public class DB {
 	
 	 
 	
-	
+	// metodo para baixar os dados de conexão com o BD
 	private static Properties loadProperties() { //metodo para carregar os dados da conexão
 		try (FileInputStream fs = new FileInputStream("db.propeties")) { //lê o arquivo
 			Properties pros = new Properties(); //instancia um objeto Properties
