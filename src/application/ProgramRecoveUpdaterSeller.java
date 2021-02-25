@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 
 import db.DB;
 
-public class Program {
+public class ProgramRecoveUpdaterSeller {
 
 	public static void main(String[] args) {
 		
@@ -49,22 +49,23 @@ public class Program {
 					+ "(Name, Email, BirthDate, BaseSalary, DepartmentId) "
 					+ "VALUES "
 					+ "(?, ?, ? ,? , ?)",
-					Statement.RETURN_GENERATED_KEYS);
+					Statement.RETURN_GENERATED_KEYS); // retorno tbm as chaves geradas;
 			
 			ps.setString(1, "Cris");
 			ps.setString(2, "cris@gmail.com");
+			// date sql, instanciação para datas
 			ps.setDate(3, new java.sql.Date(sdf.parse("17/10/2000").getTime()));
 			ps.setDouble(4, 4000.0);
 			ps.setInt(5, 3);
 			
 			
 			
-			int rows = ps.executeUpdate();
+			int rows = ps.executeUpdate();// executa a query e retorna um int(nr de linhas afetadas)
 			
 			if(rows > 0) {
-				ResultSet rs2 = ps.getGeneratedKeys();
+				ResultSet rs2 = ps.getGeneratedKeys();//instancia um ResultSet com as chaves criadas.
 				while(rs2.next()) {
-					int id = rs2.getInt(1);
+					int id = rs2.getInt(1); //atribui o valor da coluna "1" para a variável
 					System.out.println("Done! new ID = " + id);
 				}
 			}

@@ -9,7 +9,7 @@ import java.sql.Statement;
 import db.DB;
 import db.DbException;
 
-public class Program2 {
+public class ProgramRecoveUpdaterDepartment {
 
 	public static void main(String[] args) {
 
@@ -54,8 +54,9 @@ public class Program2 {
 			ResultSet rs2 = ps.getGeneratedKeys();
 			while(rs2.next()) {
 				System.out.println("Done! new ID = " + rs2.getInt(1));
-				System.out.println("rows affected: " + rows);
+				
 			}
+			System.out.println("rows affected: " + rows);
 		}
 		else {
 			System.out.println("no rows affected!");
