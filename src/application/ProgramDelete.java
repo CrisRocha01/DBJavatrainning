@@ -32,6 +32,7 @@ public class ProgramDelete {
 		finally {
 			DB.closeStatement(st);
 			DB.closeConnection(conn);
+			
 		}
 
 	}
